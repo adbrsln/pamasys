@@ -59,8 +59,8 @@ if (isset($_GET["id"])) {
                         </tr>
                         <tr>
                             
-                            <td><textarea class = "form-control" cols = "77" name= "content" rows="5"><?php echo $row2['content']; ?></textarea></td>
-                            <td><textarea class = "form-control" cols = "77" name ="med" rows="5"><?php echo $row2['med']; ?></textarea></td>
+                            <td><textarea class="form-control ckeditor" cols = "77" name= "content" rows="5"><?php echo $row2['content']; ?></textarea></td>
+                            <td><textarea class="form-control ckeditor"  cols = "77" name ="med" rows="5"><?php echo $row2['med']; ?></textarea></td>
                             <input type = "hidden" name ="id" value = "<?=$transid;?>">
                                 
                         </tr>

@@ -130,6 +130,7 @@
             });
           }
     </script>
+<script type="text/javascript" src="../include/ckeditor/ckeditor.js"></script>
 </body>
 
 </html>

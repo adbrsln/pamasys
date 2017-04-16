@@ -2,7 +2,11 @@
 include 'include/check.php';
 include '../include/db.php';
 
-$sql2 = "SELECT DISTINCT diagnosis.pid as pid,diagnosis.diagid as did,diagnosis.checkin as timecheckin,diagnosis.status as status ,patient.patientID as pid ,patient.name as name ,patient.ic as ic FROM diagnosis join patient on diagnosis.pid = patient.patientID WHERE status != 'Complete' ORDER BY diagnosis.checkin ASC ";
+$sql2 = "SELECT DISTINCT diagnosis.pid as pid,diagnosis.diagid as did,diagnosis.checkin as timecheckin,diagnosis.status as status ,patient.patientID,patient.name as name ,patient.ic as ic, status.name as sname 
+FROM diagnosis 
+join patient on diagnosis.pid = patient.patientID
+join status on diagnosis.status = status.id
+WHERE status.name != 'Complete' ORDER BY diagnosis.checkin ASC";
 
 
 $result2 = mysqli_query($connect,$sql2);
@@ -68,7 +72,7 @@ $p3=mysqli_num_rows($result3);
                                                 <td><?php echo $row2['ic']; ?></td>
                                                 <td><?php  echo $row2['timecheckin'];//echo substr($row2['itemDesc'],0,40); ?></td>
                                                  
-                                                <td><?php echo $row2['status']; ?></td>
+                                                <td><?php echo $row2['sname']; ?></td>
                                                 
                                                 <td ><center><a  class = "btn btn-primary btn-sm"  href="listdiagnosis.php?id=<?=$row2['pid'];?>" data-toggle="tooltip" data-placement="top" title="Attended"><span class="glyphicon glyphicon-eye-open" ></span></a>&nbsp;
                                                   &nbsp;
