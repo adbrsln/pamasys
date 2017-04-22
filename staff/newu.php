@@ -2,7 +2,7 @@
 include 'include/check.php';
 include '../include/db.php';
 $num = $_SESSION['sid'];
-$sql = "SELECT login.username as username, details.name as name, details.address as address , details.notel as notel FROM details join login on login.num = details.staffid where staffid = '$num'";
+$sql = "SELECT login.username as username, d.name as name, d.address as address , d.notel as notel FROM userdetail d join login on login.num = d.staffid where staffid = '$num'";
 $result = mysqli_query($connect,$sql);
 
 include "include/header.php"; ?>
