@@ -27,7 +27,7 @@ Password : admin
 
 Username : user
 
-Password : user123
+Password : user
 
 
 
