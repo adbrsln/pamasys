@@ -6,7 +6,6 @@ $num_rec_per_page=10;
 if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; }; 
 $start_from = ($page-1) * $num_rec_per_page; 
 $sql2 = "SELECT * FROM login LIMIT $start_from, $num_rec_per_page";
-//$sql2="SELECT distinct login.num as num,login.username as username, login.password as password,login.level as level , details.name as name FROM login join details on login.num = details.loginID LIMIT $start_from,$num_rec_per_page";
 $result2 = mysqli_query($connect,$sql2);
 $p=mysqli_num_rows($result2);
 ?>
@@ -45,8 +44,8 @@ $p=mysqli_num_rows($result2);
                                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                         <thead>
                                             <tr>
-                                                <th class="col-lg-4">Username</th>
-                                                <th class="col-lg-4">Name</th>
+                                                <th class="col-lg-4" rowspan="3">Username</th>
+                                                
                                                 <th class="col-lg-1">Level</th>
                                                 <th class="col-lg-2"><center>Action</center></th>
                                             </tr>
@@ -56,7 +55,7 @@ $p=mysqli_num_rows($result2);
                                               <tr>
                                                
                                                 <td ><?php echo $row2['username']; ?></td>
-                                                <td ><?php echo $row2['password']; ?></td>
+                                                
                                                 <td ><?php echo $row2['level']; ?></td>
                                                 <td ><center>
                                                     <a  class = "btn btn-primary btn-sm"  href="edit.php?id=<?=$row2['num'];?>" >Update</a>&nbsp;

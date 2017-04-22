@@ -5,7 +5,9 @@ $transid = $_GET["id"];
 if (isset($_GET["id"])) {
 
 
-$sql2 = "SELECT DISTINCT diagnosis.diagid as diagid, diagnosis.status as status,diagnosis.content,diagnosis.med,diagnosis.checkin, details.name as drname, details.title as title FROM diagnosis join details on diagnosis.sid = details.staffid where diagnosis.pid = '$transid'";
+$sql2 = "SELECT DISTINCT diagnosis.diagid as diagid, diagnosis.status as status,diagnosis.content,diagnosis.med,diagnosis.checkin, details.name as drname, details.title as title,status.name as sname  FROM diagnosis join details on diagnosis.sid = details.staffid 
+join status on diagnosis.status = status.id
+where diagnosis.pid = '$transid'";
 
 //$sql2 = "SELECT * FROM item LIMIT $start_from, $num_rec_per_page";
 
@@ -94,7 +96,7 @@ $result = mysqli_query($connect,$sql3);
                                                 <td><?php echo $row2['diagid']; ?></td>
                                                 <td><?php echo $row2['checkin']; ?></td>
                                                  <td><?php echo $row2['title']; ?><?php echo $row2['drname']; ?></td>
-                                                  <td><?php echo $row2['status']; ?></td>
+                                                  <td><?php echo $row2['sname']; ?></td>
                                                 
                                                 
                                                 <td ><center><a  class = "btn btn-primary btn-sm"  href="view.php?id=<?=$row2['diagid'];?>" ><span class="glyphicon glyphicon-edit" ></span></a>&nbsp;

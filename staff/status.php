@@ -13,7 +13,7 @@ $num=mysqli_num_rows($result);
 if ($num > 0) {
 	
     if ($type == 'Approve'){
-		$query2 = "UPDATE diagnosis set status = 'Complete' where diagid = '$id'";
+		$query2 = "UPDATE diagnosis set status = 3 where diagid = '$id'";
 
 		mysqli_query($connect,$query2) or die('Error: ' . mysqli_error());
 		$querydaftar = "FLUSH PRIVILEGES";
