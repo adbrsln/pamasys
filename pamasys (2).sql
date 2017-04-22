@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2017 at 09:26 AM
+-- Generation Time: Apr 22, 2017 at 09:59 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -41,7 +41,6 @@ CREATE TABLE `diagnosis` (
 --
 
 INSERT INTO `diagnosis` (`diagid`, `pid`, `sid`, `content`, `med`, `checkin`, `status`) VALUES
-(2, 13, 4, '<p>test</p>\r\n', '<p>test</p>\r\n', '2017-04-16 02:57:21', 3),
 (3, 12, 4, '<p>teadsa</p>\r\n', '<p>tesads</p>\r\n', '2017-04-16 02:57:26', 3),
 (5, 12, 5, '', '', '2017-04-16 03:07:27', 1);
 
@@ -52,7 +51,7 @@ INSERT INTO `diagnosis` (`diagid`, `pid`, `sid`, `content`, `med`, `checkin`, `s
 --
 
 CREATE TABLE `login` (
-  `num` int(50) NOT NULL,
+  `num` int(25) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(255) NOT NULL,
   `level` int(1) NOT NULL
@@ -85,8 +84,7 @@ CREATE TABLE `patient` (
 --
 
 INSERT INTO `patient` (`patientID`, `name`, `ic`, `address`, `phonenumber`) VALUES
-(12, 'Adib roslan', '93041202331', 'No 31, Parit Jelutong, Bukit Katil , Melaka', '0172631232'),
-(13, 'Fatin ', '93001234111', 'No. 40/14 Parit Haji rais , Batu Pahat , Johor', '0196866672');
+(12, 'Adib roslan', '93041202331', 'No 31, Parit Jelutong, Bukit Katil , Melaka', '0172631232');
 
 -- --------------------------------------------------------
 
@@ -127,8 +125,8 @@ CREATE TABLE `userdetail` (
 --
 
 INSERT INTO `userdetail` (`staffid`, `name`, `address`, `notel`, `title`) VALUES
-(3, 'admin', 'no 31, lajansda', '01827773', 'Dr.'),
-(4, 'Staff', 'sadadasda', '123123', 'Ms.');
+(3, 'Arman Vartula', 'teasdasdsaasd', '017665542', 'Dr.'),
+(4, 'staff', 'testasdad', 'a2323', 'Mr.');
 
 --
 -- Indexes for dumped tables
@@ -176,6 +174,11 @@ ALTER TABLE `userdetail`
 ALTER TABLE `diagnosis`
   MODIFY `diagid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
+-- AUTO_INCREMENT for table `login`
+--
+ALTER TABLE `login`
+  MODIFY `num` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
@@ -186,11 +189,6 @@ ALTER TABLE `patient`
 ALTER TABLE `status`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT for table `userdetail`
---
-ALTER TABLE `userdetail`
-  MODIFY `staffid` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
 -- Constraints for dumped tables
 --
 
@@ -200,6 +198,12 @@ ALTER TABLE `userdetail`
 ALTER TABLE `diagnosis`
   ADD CONSTRAINT `diagnosis_ibfk_1` FOREIGN KEY (`status`) REFERENCES `status` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `diagnosis_ibfk_2` FOREIGN KEY (`pid`) REFERENCES `patient` (`patientID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `patient`
+--
+ALTER TABLE `patient`
+  ADD CONSTRAINT `patient_ibfk_1` FOREIGN KEY (`patientID`) REFERENCES `diagnosis` (`pid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `userdetail`
