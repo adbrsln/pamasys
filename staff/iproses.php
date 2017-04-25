@@ -9,8 +9,6 @@ $n = $_POST['pname'];
 $ic = $_POST['pic'];
 $notel = $_POST['notel'];
 $add = $_POST['address'];
-//$g = $_POST['gender'];
-//$r = $_POST['race'];
 
 
 

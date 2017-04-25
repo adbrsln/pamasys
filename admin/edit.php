@@ -2,7 +2,7 @@
 include 'include/check.php';
 include '../include/db.php';
 $num = $_GET['id'];
-$sql = "SELECT * FROM login where num = '$num'";
+$sql = "SELECT * FROM staffdetail where staffid = '$num'";
 $result = mysqli_query($connect,$sql);
 ?>
 <!-- Header Content -->
@@ -29,7 +29,7 @@ $result = mysqli_query($connect,$sql);
                <input class="form-control"  type="text" name = "user"  value="<?=$row2['username']; ?>" required>
                  </br>
             <label>Password</label></br>  
-               <input class="form-control"  type="password" name = "pass" value="" required></a>
+               <input class="form-control"  type="password" name = "pass" value="user1234" required></a>
                  </br>
             <label>Credential type</label></br>  
                 <select class ="form-control" name = "level">
@@ -44,7 +44,7 @@ $result = mysqli_query($connect,$sql);
                 </select>
             </br>
 
-            <input type="hidden" name = "num" value = "<?=$row2['num']; ?>" >
+            <input type="hidden" name = "num" value = "<?=$row2['staffid']; ?>" >
             <?php  }  ?>
 
              <input class="btn btn-primary" type ="submit" class  = "btn" name = "submit" id ="submit" value="Submit">

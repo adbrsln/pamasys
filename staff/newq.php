@@ -8,7 +8,7 @@ include '../include/db.php';
 
         $id = $_GET['id'];
         $sid = $_SESSION['sid'];
-        $query = "INSERT INTO diagnosis (pid,sid, status) VALUES ('$id','$sid', 'Waiting Diagnosis')";
+        $query = "INSERT INTO diagnosis (patientID,staffID, statusID) VALUES ('$id','$sid', 1)";
 		mysqli_query($connect,$query) or die ("Error Query [".$strSQL."]");
 		$query = "FLUSH PRIVILEGES";
 		

@@ -6,7 +6,7 @@ include 'db.php';
 $username=mysqli_real_escape_string($connect,$_POST['username']);
 $password=mysqli_real_escape_string($connect,$_POST['password']);
 $encrypted_mypassword=md5($password);
-$sql = "SELECT * FROM login WHERE (username = '$username') and (password = '$encrypted_mypassword')";
+$sql = "SELECT * FROM staffdetail WHERE (username = '$username') and (password = '$encrypted_mypassword')";
 $login = mysqli_query($connect,$sql);
 $count = mysqli_num_rows($login) ;
 
@@ -17,13 +17,9 @@ $count = mysqli_num_rows($login) ;
 					
 					
 					$_SESSION['levella'] = $row['level'];
-                    $_SESSION['sid'] = $row['num']; //staff id
-					$numo = $row['num'];
+                    $_SESSION['sid'] = $row['staffid']; //staff id
 					
-					//$sql2 = "SELECT * FROM details WHERE (staffid = '$numo')";
-					//$login2 = mysqli_query($connect,$sql2);
-					
-
+				
 					$type = $_SESSION['levella'];
 				}
 

@@ -1,11 +1,8 @@
 <?php 
 include 'include/check.php';
 include '../include/db.php';
-$num_rec_per_page=10;
 
-if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; }; 
-$start_from = ($page-1) * $num_rec_per_page; 
-$sql2 = "SELECT * FROM login LIMIT $start_from, $num_rec_per_page";
+$sql2 = "SELECT * FROM staffdetail ";
 $result2 = mysqli_query($connect,$sql2);
 $p=mysqli_num_rows($result2);
 ?>
@@ -58,9 +55,9 @@ $p=mysqli_num_rows($result2);
                                                 
                                                 <td ><?php echo $row2['level']; ?></td>
                                                 <td ><center>
-                                                    <a  class = "btn btn-primary btn-sm"  href="edit.php?id=<?=$row2['num'];?>" >Update</a>&nbsp;
+                                                    <a  class = "btn btn-primary btn-sm"  href="edit.php?id=<?=$row2['staffid'];?>" >Update</a>&nbsp;
                                                    
-                                                    <a   onclick = "return del();" class = "btn btn-danger btn-sm" href="del.php?id=<?=$row2['num'];?>&t=r" >Delete</a></center></td>
+                                                    <a   onclick = "return del();" class = "btn btn-danger btn-sm" href="del.php?id=<?=$row2['staffid'];?>&t=r" >Delete</a></center></td>
                                               </tr>
                                              <?php  }  ?> 
                                            

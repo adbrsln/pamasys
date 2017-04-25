@@ -5,11 +5,7 @@ $transid = $_GET["id"];
 if (isset($_GET["id"])) {
 
 
-$sql2 = "SELECT DISTINCT diagnosis.diagid as diagid, diagnosis.status as status,diagnosis.content,diagnosis.med,diagnosis.checkin, details.name as drname, details.title as title,status.name as sname  FROM diagnosis join details on diagnosis.sid = details.staffid 
-join status on diagnosis.status = status.id
-where diagnosis.pid = '$transid'";
-
-//$sql2 = "SELECT * FROM item LIMIT $start_from, $num_rec_per_page";
+$sql2 = "SELECT DISTINCT d.diagnosisID as diagid, d.statusID as status,d.content,d.medication,d.checkin, s.name as drname, s.title as title,status.statusName as sname FROM diagnosis d join staffdetail s on d.staffID = s.staffid join status on d.statusID = status.statusID where d.patientID = '$transid'";
 
 $result2 = mysqli_query($connect,$sql2);
 $p=mysqli_num_rows($result2);

@@ -2,11 +2,11 @@
 include 'include/check.php';
 include '../include/db.php';
 
-$sql2 = "SELECT DISTINCT diagnosis.pid as pid,diagnosis.diagid as did,diagnosis.checkin as timecheckin,diagnosis.status as status ,patient.patientID,patient.name as name ,patient.ic as ic, status.name as sname 
-FROM diagnosis 
-join patient on diagnosis.pid = patient.patientID
-join status on diagnosis.status = status.id
-WHERE status.name != 'Complete' ORDER BY diagnosis.checkin ASC";
+$sql2 = "SELECT DISTINCT d.patientID as pid,d.diagnosisID as did,d.checkin as timecheckin,d.statusID as status ,patient.patientID,patient.name as name ,patient.ic as ic, status.statusName as sname 
+FROM diagnosis d 
+join patient on d.patientID = patient.patientID
+join status on d.statusID = status.statusID
+WHERE status.statusName != 'Complete' ORDER BY d.checkin ASC";
 
 
 $result2 = mysqli_query($connect,$sql2);

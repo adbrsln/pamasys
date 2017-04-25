@@ -6,14 +6,14 @@ $type = $_GET['type'];
 
 
 
-$query="SELECT * FROM diagnosis WHERE diagid = '$id'";
+$query="SELECT * FROM diagnosis WHERE diagnosisID = '$id'";
 $result=mysqli_query($connect,$query);
 $num=mysqli_num_rows($result);
 
 if ($num > 0) {
 	
     if ($type == 'Approve'){
-		$query2 = "UPDATE diagnosis set status = 3 where diagid = '$id'";
+		$query2 = "UPDATE diagnosis set statusID = 3 where diagnosisID = '$id'";
 
 		mysqli_query($connect,$query2) or die('Error: ' . mysqli_error());
 		$querydaftar = "FLUSH PRIVILEGES";
@@ -21,7 +21,7 @@ if ($num > 0) {
 		 echo '<meta http-equiv="refresh" content="0;url=../staff/index.php">';
 
 	}else {
-		$query2 = "UPDATE diagnosis set status = 'Cancel' where diagid = '$id'";
+		$query2 = "UPDATE diagnosis set statusID = 4 where diagnosisID = '$id'";
 
 			mysqli_query($connect,$query2) or die('Error: ' . mysqli_error());
 			$querydaftar = "FLUSH PRIVILEGES";

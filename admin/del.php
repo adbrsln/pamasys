@@ -5,7 +5,7 @@ $num = $_GET['id'];
 $type = $_GET['t'];
 
 if ($type == 'r'){
-  $query = "DELETE FROM login WHERE num = '$num'";
+  $query = "DELETE FROM staffdetail WHERE staffid = '$num'";
     mysqli_query($connect,$query) or die('Failed to delete');
     $query = "FLUSH PRIVILEGES";  
    
@@ -13,14 +13,14 @@ if ($type == 'r'){
     
 }elseif($type == 'p'){
 
-    $query = "UPDATE diagnosis set status = 'Complete' where diagid = '$num'";
+    $query = "UPDATE diagnosis set statusID = 3 where diagnosisiID = '$num'";
 		mysqli_query($connect,$query) or die ("Error Query [".$strSQL."]");
 		$query = "FLUSH PRIVILEGES";
     echo '<meta http-equiv="refresh" content="0;url=./index.php?s=t">'; 
     
 }elseif($type == 'rd'){
 
-    $query = "DELETE FROM diagnosis WHERE diagid = '$num'";
+    $query = "DELETE FROM diagnosis WHERE diagnosisiID = '$num'";
 		mysqli_query($connect,$query) or die ("Error Query [".$strSQL."]");
 		$query = "FLUSH PRIVILEGES";
     echo '<meta http-equiv="refresh" content="0;url=./index.php?s=t">'; 

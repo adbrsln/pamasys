@@ -1,20 +1,12 @@
 <?php 
 include 'include/check.php';
 include '../include/db.php';
-$num_rec_per_page=10;
 
-if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; }; 
-$start_from = ($page-1) * $num_rec_per_page; 
-//$sql2 = "SELECT DISTINCT patient.name,patient.ic,details.loginID,login.nama as name FROM corder join details on corder.user_id = details.num join login on details.loginID = login.num  LIMIT $start_from, $num_rec_per_page";
-
-$sql2 = "SELECT * FROM patient LIMIT $start_from, $num_rec_per_page";
+$sql2 = "SELECT * FROM patient ";
 
 $result2 = mysqli_query($connect,$sql2);
 $p=mysqli_num_rows($result2);
 
-
-$sql2 = "SELECT * FROM category";
-$result = mysqli_query($connect,$sql2);
 
 ?>
   <!-- Header Content -->

@@ -53,7 +53,7 @@ include "include/header.php"; ?>
                 <label>Title</label></br>  
                     <select class ="form-control" name = "title">
                         <option value = "Mr.">Mr.</option>
-                        <option value = "Miss">Miss</option>
+                        <option value = "Miss">Ms.</option>
                         <option value = "Madam">Madam</option>
                         <option value = "Dr.">Dr.</option>
                     </select>

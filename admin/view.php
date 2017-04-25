@@ -2,14 +2,14 @@
 //include 'include/check.php';
 include '../include/db.php';
 $transid = $_GET["id"];
-if (isset($_GET["id"])) {
+if (!isset($_GET["id"])) {
    
-   $query3="SELECT distinct diagnosis.content as content,diagnosis.med as med, diagnosis.checkin as checkin,patient.name as name ,patient.phonenumber as notel, patient.ic as ic,patient.address as address FROM diagnosis join patient on diagnosis.pid = patient.patientID WHERE diagnosis.diagid = '$transid'"; //index details
-	$result3 =mysqli_query($connect,$query3);
-	$count = mysqli_num_rows($result3);
-
+  echo '<meta http-equiv="refresh" content="0;url=../admin/patient.php">';
 			
-}?>
+}else  {
+   $query3="SELECT distinct d.content as content,d.medication as med, d.checkin as checkin,p.name as name ,p.phonenumber as notel, p.ic as ic,p.address as address FROM diagnosis d join patient p on d.patientID = p.patientID WHERE d.diagnosisID = '$transid'"; //index details
+	$result3 =mysqli_query($connect,$query3);
+	$count = mysqli_num_rows($result3); }?>
   <!-- Header Content -->
    <?php include "include/header.php"; ?>
     <!-- end header Content -->
