@@ -66,9 +66,9 @@ if (!isset($_GET["id"])) {
                     
                 <hr>
                 <div class="pull-right">
-                    <a   class = "btn btn-success"  href="status.php?id=<?=$transid;?>&type=Approve">Complete</a>
+                    <a   class = "btn btn-success"  href="status.php?id=<?=$transid;?>&type=Approve"><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Complete</a>
                      
-                    <a  class = "btn btn-danger" href="#" onclick="window.history.go(-1);" >Cancel</a>
+                    <a  class = "btn btn-danger" href="#" onclick="window.history.go(-1);" ><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</a>
                 </div>
                  </form>
                 </div>

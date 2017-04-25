@@ -97,9 +97,9 @@ $result = mysqli_query($connect,$sql3);
                                                   <td><?php echo $row2['sname']; ?></td>
                                                 
                                                 
-                                                <td ><center><a  class = "btn btn-primary btn-sm"  href="view.php?id=<?=$row2['diagid'];?>" ><span class="glyphicon glyphicon-edit" ></span></a>&nbsp;
+                                                <td ><center><a  class = "btn btn-primary btn-sm"  href="view.php?id=<?=$row2['diagid'];?>" ><span class="glyphicon glyphicon-edit" ></span> View</a>&nbsp;
                                                    
-                                                    <a   id = "confirmation" class = "btn btn-danger btn-sm"  href="del.php?id=<?=$row2['diagid'];?>&t=rd" ><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></center></td>
+                                                    <a   id = "confirmation" class = "btn btn-danger btn-sm"  href="del.php?id=<?=$row2['diagid'];?>&t=rd" ><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete</a></center></td>
                                               </tr>
                                              <?php $total_rows++; }  ?> 
                                            

@@ -70,9 +70,9 @@ if (!isset($_GET["id"])) {
                 <hr>
                 <div class="pull-right">
                     
-                     <button type ="submit" class ="btn btn-success" >Save</button>
-                    <a  class = "btn btn-primary" href="#" onclick="#" >Print</a>
-                    <a  class = "btn btn-danger" href="#" onclick="window.history.go(-1);" >Cancel</a>
+                     <button type ="submit" class ="btn btn-success" ><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Save</button>
+                    <a  class = "btn btn-primary" href="#" onclick="#" ><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</a>
+                    <a  class = "btn btn-danger" href="#" onclick="window.history.go(-1);" ><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancel</a>
                 </div>
                  </form>
                 </div>

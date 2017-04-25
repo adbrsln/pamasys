@@ -74,9 +74,9 @@ $p3=mysqli_num_rows($result3);
                                                  
                                                 <td><?php echo $row2['sname']; ?></td>
                                                 
-                                                <td ><center><a  class = "btn btn-primary btn-sm"  href="listdiagnosis.php?id=<?=$row2['pid'];?>" data-toggle="tooltip" data-placement="top" title="Attended"><span class="glyphicon glyphicon-eye-open" ></span></a>&nbsp;
-                                                  &nbsp;
-                                                    <a   id = "confirmation"  class = "btn btn-danger btn-sm" href="del.php?id=<?=$row2['did'];?>&t=p"  title="Cancel"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></center></td>
+                                                <td ><center>
+                                                    <a  class = "btn btn-primary btn-sm"  href="listdiagnosis.php?id=<?=$row2['pid'];?>" data-toggle="tooltip" data-placement="top" title="Attended"><span class="glyphicon glyphicon-eye-open" ></span> View </a>
+                                                    <a   id = "confirmation"  class = "btn btn-danger btn-sm" href="del.php?id=<?=$row2['did'];?>&t=p"  title="Cancel"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>  Delete</a></center></td>
                                               </tr>
                                              <?php $total_rows++; }  ?> 
                                            
