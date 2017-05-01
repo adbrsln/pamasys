@@ -45,7 +45,7 @@
         <footer class="footer">
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy;<strong>G5CProjects</strong> 2016</p>
+                    <p>Copyright &copy;<strong>G5CProjects</strong> 2017</p>
                 </div>
             </div>
         </footer>

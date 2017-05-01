@@ -57,7 +57,7 @@ $p=mysqli_num_rows($result2);
                                                 <td ><center>
                                                     <a  class = "btn btn-primary btn-sm"  href="edit.php?id=<?=$row2['staffid'];?>" >Update</a>&nbsp;
                                                    
-                                                    <a   onclick = "return del();" class = "btn btn-danger btn-sm" href="del.php?id=<?=$row2['staffid'];?>&t=r" >Delete</a></center></td>
+                                                    <a   id = "confirmation" class = "btn btn-danger btn-sm" href="del.php?id=<?=$row2['staffid'];?>&t=r" >Delete</a></center></td>
                                               </tr>
                                              <?php  }  ?> 
                                            
