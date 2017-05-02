@@ -37,8 +37,8 @@ $p3=mysqli_num_rows($result3);
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             <i class="fa fa-info-circle"></i>  <strong>Adding a new Inpatient?</strong> Try out <a href = "patient.php" class="alert-link">Here</a>
                         </div>
-                        <script src="https://code.highcharts.com/highcharts.js"></script>
-                        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                        <script src="../js/highcharts.js"></script>
+                        <script src="../js/exporting.js"></script>
 
                         <div id="container" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto"></div>
 
@@ -50,4 +50,40 @@ $p3=mysqli_num_rows($result3);
     
     <!-- /.footer -->
     <?php include "include/footer.php"; ?>
+      <script>
+        $(function () {
+        Highcharts.chart('container', {
 
+    title: {
+        text: 'Number of Patients, 2010-2016'
+    },
+
+    subtitle: {
+        text: 'Source:'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Number of Patients'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            pointStart: 2015
+        }
+    },
+
+    series: [{
+        name: 'Number of Patients',
+        data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+    }]
+
+});
+    });
+         </script>

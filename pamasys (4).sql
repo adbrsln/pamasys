@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2017 at 05:21 PM
+-- Generation Time: May 02, 2017 at 03:28 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -41,7 +41,8 @@ CREATE TABLE `diagnosis` (
 --
 
 INSERT INTO `diagnosis` (`diagnosisID`, `patientID`, `staffID`, `content`, `medication`, `checkin`, `statusID`) VALUES
-(13, 25, 4, '', '', '2017-04-25 15:15:58', 1);
+(15, 26, 1, '<p>this is new</p>\r\n', '<p>ubat batuk seems relevant</p>\r\n', '2017-05-02 01:37:05', 3),
+(16, 27, 4, '', '', '2017-05-02 01:37:25', 1);
 
 -- --------------------------------------------------------
 
@@ -62,7 +63,8 @@ CREATE TABLE `patient` (
 --
 
 INSERT INTO `patient` (`patientID`, `name`, `ic`, `address`, `phonenumber`) VALUES
-(25, 'Adib', '91234124123', 'No, 31, jalsdnanasndad', '01463232');
+(26, 'Muhammad Azfar bin roslan', '94110202022', '31, jalan astaka 5/11 , 46000 Parit Raja', '0122332222'),
+(27, 'Fatin Syarifah binti Kamal', '940552002221', '32, jalan markona 42/20 , 300499 Petaling Jaya , S', '01299922992');
 
 -- --------------------------------------------------------
 
@@ -86,8 +88,8 @@ CREATE TABLE `staffdetail` (
 --
 
 INSERT INTO `staffdetail` (`staffid`, `name`, `address`, `notel`, `title`, `username`, `password`, `level`) VALUES
-(0, 'admin', 'sadas', 'dasdadad', 'Mr.', 'admin', 'b5b73fae0d87d8b4e2573105f8fbe7bc', 1),
-(4, '', '', '', '', 'user', 'b5b73fae0d87d8b4e2573105f8fbe7bc', 2);
+(1, 'admin', 'sadas', 'dasdadad', 'Mr.', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1),
+(4, 'muhammad adib bin ahmad roslan', '31, jalan kemboja 2 , seksyen BB4, Bukit Beruntung', '0176213816', 'Mr.', 'staff', 'b5b73fae0d87d8b4e2573105f8fbe7bc', 2);
 
 -- --------------------------------------------------------
 
@@ -148,12 +150,17 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `diagnosis`
 --
 ALTER TABLE `diagnosis`
-  MODIFY `diagnosisID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `diagnosisID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `patientID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `patientID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+--
+-- AUTO_INCREMENT for table `staffdetail`
+--
+ALTER TABLE `staffdetail`
+  MODIFY `staffid` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `status`
 --
