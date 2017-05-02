@@ -41,19 +41,20 @@ $p=mysqli_num_rows($result2);
                                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                         <thead>
                                             <tr>
-                                                <th class="col-lg-4" rowspan="3">Username</th>
+                                                <th class="col-lg-4" rowspan="3">Name</th>
+                                                <th class="col-lg-3" rowspan="3">Username</th>
                                                 
-                                                <th class="col-lg-1">Level</th>
+                                                <th class="col-lg-2">Access Level</th>
                                                 <th class="col-lg-2"><center>Action</center></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php while($row2 = mysqli_fetch_assoc($result2)){ $o=1; ?>
                                               <tr>
-                                               
+                                                <td ><?php echo $row2['name']; ?></td>
                                                 <td ><?php echo $row2['username']; ?></td>
                                                 
-                                                <td ><?php echo $row2['level']; ?></td>
+                                                <td ><?php if($row2['level'] == 1) {echo '<span class="label label-success">Admin</span>';}else echo '<span class="label label-primary">Staff</span>'; ?></td>
                                                 <td ><center>
                                                     <a  class = "btn btn-primary btn-sm"  href="edit.php?id=<?=$row2['staffid'];?>" >Update</a>&nbsp;
                                                    

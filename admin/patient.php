@@ -100,13 +100,13 @@ $p=mysqli_num_rows($result2);
                                <input class="form-control"  type="text" name = "pname"  required>
                                 </br>
                                 <p>Patient IC</p>
-                               <input class="form-control"  type="text" name = "pic"  required>
+                               <input class="form-control"  type="text" name = "pic" maxlength = "15" required>
                                  </br>
                                 <p>Patient Address</p>
                                 <input class="form-control"  type="text" name = "address"  required>
                                  </br>
                                 <p>Patient Phone Number</p>
-                                <input class="form-control"  type="text" name = "notel"  required>
+                                <input class="form-control"  type="text" name = "notel"  maxlength = "11" required>
                                  </br>
                                 
                                 

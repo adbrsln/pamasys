@@ -2,7 +2,7 @@
 include 'include/check.php';
 include '../include/db.php';
 
-$sql2 = "SELECT DISTINCT d.patientID as pid,d.diagnosisID as did,d.checkin as timecheckin,d.statusID as status ,patient.patientID,patient.name as name ,patient.ic as ic, status.statusName as sname 
+$sql2 = "SELECT DISTINCT d.patientID as pid,d.diagnosisID as did,d.checkin as timecheckin,d.statusID as status ,patient.patientID,patient.name as name ,patient.ic as ic, status.statusName as sname ,status.statusID as statid
 FROM diagnosis d 
 join patient on d.patientID = patient.patientID
 join status on d.statusID = status.statusID
@@ -72,7 +72,12 @@ $p3=mysqli_num_rows($result3);
                                                 <td><?php echo $row2['ic']; ?></td>
                                                 <td><?php  echo $row2['timecheckin'];?></td>
                                                  
-                                                <td><?php echo $row2['sname']; ?></td>
+                                                <td><?php switch($row2['statid']){ 
+                                                        case 1 : echo '<span class="label label-primary">'; echo $row2['sname']; echo '</span>'; break;
+                                                        case 2 : echo '<span class="label label-warning">'; echo $row2['sname']; echo '</span>'; break;
+                                                        case 3 : echo '<span class="label label-success">'; echo $row2['sname']; echo '</span>'; break;
+                                                        case 4 : echo '<span class="label label-danger">'; echo $row2['sname']; echo '</span>'; break;
+                                                        }?></td>
                                                 
                                                 <td ><center>
                                                     <a  class = "btn btn-primary btn-sm"  href="listdiagnosis.php?id=<?=$row2['pid'];?>" data-toggle="tooltip" data-placement="top" title="Attended"><span class="glyphicon glyphicon-eye-open" ></span> View </a>

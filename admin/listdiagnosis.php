@@ -92,7 +92,12 @@ $result = mysqli_query($connect,$sql3);
                                                 <td><?php echo $row2['diagid']; ?></td>
                                                 <td><?php echo $row2['checkin']; ?></td>
                                                  <td><?php echo $row2['title']; ?><?php echo $row2['drname']; ?></td>
-                                                  <td><?php echo $row2['sname']; ?></td>
+                                                  <td><?php switch($row2['status']){ 
+                                                        case 1 : echo '<span class="label label-primary">'; echo $row2['sname']; echo '</span>'; break;
+                                                        case 2 : echo '<span class="label label-warning">'; echo $row2['sname']; echo '</span>'; break;
+                                                        case 3 : echo '<span class="label label-success">'; echo $row2['sname']; echo '</span>'; break;
+                                                        case 4 : echo '<span class="label label-danger">'; echo $row2['sname']; echo '</span>'; break;
+                                                        }?></td>
                                                 
                                                 
                                                 <td ><center><a  class = "btn btn-primary btn-sm"  href="view.php?id=<?=$row2['diagid'];?>" ><span class="glyphicon glyphicon-edit" ></span> View</a>&nbsp;
