@@ -58,10 +58,10 @@ $p=mysqli_num_rows($result2);
                                             <?php $total_rows = 1; while($row2 = mysqli_fetch_assoc($result2)){  ?>
                                               <tr>
                                                 <td><?=$total_rows;?></td>
-                                                <td><?php echo $row2['name']; ?></td>
-                                                <td><?php echo $row2['ic']; ?></td>
+                                                <td><?php echo $row2['patientName']; ?></td>
+                                                <td><?php echo $row2['patientIc']; ?></td>
                                                
-                                                  <td><?php echo $row2['phonenumber']; ?></td>
+                                                  <td><?php echo $row2['patientPhoneNumber']; ?></td>
                                                 
                                                 
                                                 <td ><center>

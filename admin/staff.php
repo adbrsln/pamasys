@@ -51,7 +51,7 @@ $p=mysqli_num_rows($result2);
                                         <tbody>
                                             <?php while($row2 = mysqli_fetch_assoc($result2)){ $o=1; ?>
                                               <tr>
-                                                <td ><?php echo $row2['name']; ?></td>
+                                                <td ><?php echo $row2['staffName']; ?></td>
                                                 <td ><?php echo $row2['username']; ?></td>
                                                 
                                                 <td ><?php if($row2['level'] == 1) {echo '<span class="label label-success">Admin</span>';}else echo '<span class="label label-primary">Staff</span>'; ?></td>

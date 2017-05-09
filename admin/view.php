@@ -7,7 +7,7 @@ if (!isset($_GET["id"])) {
   echo '<meta http-equiv="refresh" content="0;url=../admin/patient.php">';
 			
 }else  {
-   $query3="SELECT distinct d.content as content,d.medication as med, d.checkin as checkin,p.name as name ,p.phonenumber as notel, p.ic as ic,p.address as address FROM diagnosis d join patient p on d.patientID = p.patientID WHERE d.diagnosisID = '$transid'"; //index details
+   $query3="SELECT distinct d.content as content,d.medication as med, d.checkin as checkin,p.patientName as name ,p.patientPhoneNumber as notel, p.patientIc as ic,p.patientAddress as address FROM diagnosis d join patient p on d.patientID = p.patientID WHERE d.diagnosisID = '$transid'"; //index details
 	$result3 =mysqli_query($connect,$query3);
 	$count = mysqli_num_rows($result3); }?>
   <!-- Header Content -->

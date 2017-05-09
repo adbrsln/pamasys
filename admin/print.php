@@ -2,7 +2,7 @@
 include 'include/check.php';
 include '../include/db.php';
 $num = $_GET['id'];
-$sql = "SELECT p.name as pname, p.ic as ic, p.address as address,p.phonenumber as notel, d.content as content, d.medication as med,d.checkin as checktime, s.name as  dname, s.title as title from diagnosis d join patient p on d.patientID= p.patientID join staffdetail s on s.staffid = d.staffID  where d.diagnosisID = '$num'";
+$sql = "SELECT p.patientName as pname, p.patientIc as ic, p.patientAddress as address,p.patientPhoneNumber as notel, d.content as content, d.medication as med,d.checkin as checktime, s.staffName as  dname, s.staffTitle as title from diagnosis d join patient p on d.patientID= p.patientID join staffdetail s on s.staffid = d.staffID  where d.diagnosisID = '$num'";
 $result = mysqli_query($connect,$sql);
 
 ?>

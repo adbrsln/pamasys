@@ -44,7 +44,7 @@ else
         $t = $_POST['title'];
             
 		$encrypted_mypassword = md5($p);
-		$query = "INSERT INTO staffdetail (username, password, level,name,address,title,notel) 
+		$query = "INSERT INTO staffdetail (username, password, level,staffName,staffAddress,staffTitle,staffNotel) 
         VALUES ('$u', '$encrypted_mypassword', '$l','$n','$add','$t','$not')";
         mysqli_query($connect,$query) or die ("Error Query ");
 		

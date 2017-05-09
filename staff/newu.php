@@ -23,7 +23,7 @@ include "include/header.php"; ?>
         <form method="POST" action = "reg_user.php">
             <?php while($row2 = mysqli_fetch_assoc($result)){ ?>
                 <label>Name</label> </br>
-                   <input class="form-control"  type="text" name = "name"  value="<?=$row2['name']; ?>" required>
+                   <input class="form-control"  type="text" name = "name"  value="<?=$row2['staffName']; ?>" required>
                      </br>
              <label>Username</label> </br>
                <input class="form-control"  type="text" name = "user" value="<?=$row2['username']; ?>" required>
@@ -39,10 +39,10 @@ include "include/header.php"; ?>
             
                  
                 <label>Address</label></br>  
-                   <input class="form-control"  type="text" name = "add" value="<?=$row2['address']; ?>" required></a>
+                   <input class="form-control"  type="text" name = "add" value="<?=$row2['staffAddress']; ?>" required></a>
                      </br>
                 <label>Phone Number</label></br>  
-                   <input class="form-control"  type="text" name = "notel" value="<?=$row2['notel']; ?>" required></a>
+                   <input class="form-control"  type="text" name = "notel" value="<?=$row2['staffNotel']; ?>" required></a>
                      </br>
                 <label>Title</label></br>  
                     <select class ="form-control" name = "title">

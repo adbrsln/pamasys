@@ -20,19 +20,19 @@ if($num != 0)
 { 
     
     
-    echo '<meta http-equiv="refresh" content="0;url=../staff/list.php?s=f">'; 
+    echo '<meta http-equiv="refresh" content="0;url=../admin/patient.php?s=f">'; 
 }
 else
     {
  
-        $query = "INSERT INTO patient (name,ic,address,phonenumber) VALUES ('$n', '$ic', '$add', '$notel')";
+        $query = "INSERT INTO patient (patientName,patientIc,patientAddress,patientPhoneNumber) VALUES ('$n', '$ic', '$add', '$notel')";
         mysqli_query($connect,$query) or die ("Error Query [".$strSQL."]");;
         $query = "FLUSH PRIVILEGES";
 
      
     
-      
-    echo '<meta http-equiv="refresh" content="0;url=../staff/list.php?s=t">'; 
+		
+    echo '<meta http-equiv="refresh" content="0;url=../admin/patient.php?s=t">'; 
 
     }
 

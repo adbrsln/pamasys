@@ -2,7 +2,7 @@
 include 'include/check.php';
 include '../include/db.php';
 
-$sql2 = "SELECT DISTINCT d.patientID as pid,d.diagnosisID as did,d.checkin as timecheckin,d.statusID as status ,patient.patientID,patient.name as name ,patient.ic as ic, status.statusName as sname ,status.statusID as statid
+$sql2 = "SELECT DISTINCT d.patientID as pid,d.diagnosisID as did,d.checkin as timecheckin,d.statusID as status ,patient.patientID,patient.patientName as name ,patient.patientIc as ic, status.statusName as sname ,status.statusID as statid
 FROM diagnosis d 
 join patient on d.patientID = patient.patientID
 join status on d.statusID = status.statusID

@@ -5,10 +5,7 @@ $transid = $_GET["id"];
 if (isset($_GET["id"])) {
 
 
-$sql2 = "SELECT DISTINCT d.diagnosisID as diagid, d.statusID as status,d.content,d.medication,d.checkin, s.name as drname, s.title as title,status.statusName as sname FROM diagnosis d join staffdetail s on d.staffID = s.staffid join status on d.statusID = status.statusID where d.patientID = '$transid'";
-
-//$sql2 = "SELECT * FROM item LIMIT $start_from, $num_rec_per_page";
-
+$sql2 = "SELECT DISTINCT d.diagnosisID as diagid, d.statusID as status,d.content,d.medication,d.checkin, s.staffName as drname, s.staffTitle as title,status.statusName as sname FROM diagnosis d join staffdetail s on d.staffID = s.staffid join status on d.statusID = status.statusID where d.patientID = '$transid'";
 $result2 = mysqli_query($connect,$sql2);
 $p=mysqli_num_rows($result2);
 
@@ -45,16 +42,16 @@ $result = mysqli_query($connect,$sql3);
                         <?php $total_rows = 1; while($row2 = mysqli_fetch_assoc($result)){  ?>
                         <Strong>Patient Information</Strong></br></br>
                                  <label>Name</label> : 
-                                   <?php echo $row2['name']; ?>
+                                   <?php echo $row2['patientName']; ?>
                                      </br>
                                 <label>Identification Card No.</label> :
-                                          <?php echo $row2['ic']; ?>
+                                          <?php echo $row2['patientIc']; ?>
                                              </br>
                                 <label>Address</label> :
-                                         <?php echo $row2['address']; ?>
+                                         <?php echo $row2['patientAddress']; ?>
                                              </br>
                                 <label>Phone Number</label> :
-                                           <?php echo $row2['phonenumber']; ?>
+                                           <?php echo $row2['patientPhoneNumber']; ?>
                                              </br>
                                  
                                 
