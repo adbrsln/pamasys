@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 02, 2017 at 03:28 PM
+-- Generation Time: May 10, 2017 at 04:58 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -41,8 +41,19 @@ CREATE TABLE `diagnosis` (
 --
 
 INSERT INTO `diagnosis` (`diagnosisID`, `patientID`, `staffID`, `content`, `medication`, `checkin`, `statusID`) VALUES
-(15, 26, 1, '<p>this is new</p>\r\n', '<p>ubat batuk seems relevant</p>\r\n', '2017-05-02 01:37:05', 3),
-(16, 27, 4, '', '', '2017-05-02 01:37:25', 1);
+(15, 26, 1, '<p>this is new</p>\r\n', '<p>ubat batuk seems relevant</p>\r\n', '2017-11-02 01:37:05', 3),
+(16, 27, 4, '', '', '2017-05-10 14:07:01', 3),
+(17, 26, 1, '', '', '2017-05-10 14:07:52', 3),
+(18, 27, 1, '', '', '2017-05-10 14:07:08', 3),
+(19, 26, 1, '', '', '2017-05-10 14:08:00', 3),
+(20, 26, 1, '', '', '2017-05-02 13:49:27', 1),
+(23, 29, 1, '', '', '2017-08-02 13:52:14', 1),
+(24, 27, 1, '', '', '2017-05-10 14:07:15', 3),
+(27, 28, 1, '', '', '2017-12-02 13:52:56', 1),
+(28, 27, 1, '', '', '2017-05-10 14:28:04', 3),
+(31, 29, 1, '', '', '2017-05-10 14:06:53', 3),
+(32, 30, 1, '', '', '2017-05-10 13:36:44', 3),
+(33, 27, 4, '', '', '2017-05-10 14:22:19', 3);
 
 -- --------------------------------------------------------
 
@@ -52,19 +63,22 @@ INSERT INTO `diagnosis` (`diagnosisID`, `patientID`, `staffID`, `content`, `medi
 
 CREATE TABLE `patient` (
   `patientID` int(50) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `ic` varchar(15) NOT NULL,
-  `address` varchar(50) NOT NULL,
-  `phonenumber` varchar(13) NOT NULL
+  `patientName` varchar(50) NOT NULL,
+  `patientIc` varchar(15) NOT NULL,
+  `patientAddress` varchar(50) NOT NULL,
+  `patientPhoneNumber` varchar(13) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `patient`
 --
 
-INSERT INTO `patient` (`patientID`, `name`, `ic`, `address`, `phonenumber`) VALUES
+INSERT INTO `patient` (`patientID`, `patientName`, `patientIc`, `patientAddress`, `patientPhoneNumber`) VALUES
 (26, 'Muhammad Azfar bin roslan', '94110202022', '31, jalan astaka 5/11 , 46000 Parit Raja', '0122332222'),
-(27, 'Fatin Syarifah binti Kamal', '940552002221', '32, jalan markona 42/20 , 300499 Petaling Jaya , S', '01299922992');
+(27, 'Fatin Syarifah binti Kamal', '940552002221', '32, jalan markona 42/20 , 300499 Petaling Jaya , S', '01299922992'),
+(28, 'Muhammad Iskandar Bin jaafar', '941221321231233', 'no 41/12 hulu selangor', '01292929292'),
+(29, 'Muhammad Muinnudin bin Md Radzi', '912399393939929', 'No 50l, thailand', '01292923223'),
+(30, 'Muhammad Faiq bin Sudin', '123123123131123', 'No 11, Jalan Kasawari', '08726325656');
 
 -- --------------------------------------------------------
 
@@ -74,10 +88,10 @@ INSERT INTO `patient` (`patientID`, `name`, `ic`, `address`, `phonenumber`) VALU
 
 CREATE TABLE `staffdetail` (
   `staffid` int(25) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `address` text NOT NULL,
-  `notel` varchar(14) NOT NULL,
-  `title` varchar(20) NOT NULL,
+  `staffName` varchar(50) NOT NULL,
+  `staffAddress` text NOT NULL,
+  `staffNotel` varchar(14) NOT NULL,
+  `staffTitle` varchar(20) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `level` int(1) NOT NULL
@@ -87,9 +101,9 @@ CREATE TABLE `staffdetail` (
 -- Dumping data for table `staffdetail`
 --
 
-INSERT INTO `staffdetail` (`staffid`, `name`, `address`, `notel`, `title`, `username`, `password`, `level`) VALUES
+INSERT INTO `staffdetail` (`staffid`, `staffName`, `staffAddress`, `staffNotel`, `staffTitle`, `username`, `password`, `level`) VALUES
 (1, 'admin', 'sadas', 'dasdadad', 'Mr.', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1),
-(4, 'muhammad adib bin ahmad roslan', '31, jalan kemboja 2 , seksyen BB4, Bukit Beruntung', '0176213816', 'Mr.', 'staff', 'b5b73fae0d87d8b4e2573105f8fbe7bc', 2);
+(4, 'muhammad adib bin ahmad roslan', '31, jalan kemboja 2 , seksyen BB4, Bukit Beruntung', '0176213816', 'Mr.', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 2);
 
 -- --------------------------------------------------------
 
@@ -150,12 +164,12 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `diagnosis`
 --
 ALTER TABLE `diagnosis`
-  MODIFY `diagnosisID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `diagnosisID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `patientID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `patientID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT for table `staffdetail`
 --

@@ -18,7 +18,7 @@ if ($num > 0) {
 		mysqli_query($connect,$query2) or die('Error: ' . mysqli_error());
 		$querydaftar = "FLUSH PRIVILEGES";
 
-		 echo '<meta http-equiv="refresh" content="0;url=../staff/index.php">';
+		 echo '<meta http-equiv="refresh" content="0;url=../staff/list.php">';
 
 	}else {
 		$query2 = "UPDATE diagnosis set statusID = 4 where diagnosisID = '$id'";
@@ -26,7 +26,7 @@ if ($num > 0) {
 			mysqli_query($connect,$query2) or die('Error: ' . mysqli_error());
 			$querydaftar = "FLUSH PRIVILEGES";
 
-			 echo '<meta http-equiv="refresh" content="0;url=../staff/index.php">';
+			 echo '<meta http-equiv="refresh" content="0;url=../staff/list.php">';
 	}
 	
 }

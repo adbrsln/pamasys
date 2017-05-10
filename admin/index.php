@@ -6,7 +6,7 @@ $sql2 = "SELECT DISTINCT d.patientID as pid,d.diagnosisID as did,d.checkin as ti
 FROM diagnosis d 
 join patient on d.patientID = patient.patientID
 join status on d.statusID = status.statusID
-WHERE status.statusName != 'Complete' ORDER BY d.checkin ASC";
+WHERE status.statusName != 'Complete' ORDER BY did DESC";
 
 
 $result2 = mysqli_query($connect,$sql2);
@@ -80,7 +80,7 @@ $p3=mysqli_num_rows($result3);
                                                         }?></td>
                                                 
                                                 <td ><center>
-                                                    <a  class = "btn btn-primary btn-sm"  href="listdiagnosis.php?id=<?=$row2['pid'];?>" data-toggle="tooltip" data-placement="top" title="Attended"><span class="glyphicon glyphicon-eye-open" ></span> View </a>
+                                                    <a  class = "btn btn-primary btn-sm"  href="view.php?id=<?=$row2['did'];?>" data-toggle="tooltip" data-placement="top" title="Attended"><span class="glyphicon glyphicon-eye-open" ></span> View </a>
                                                     <a   id = "confirmation"  class = "btn btn-danger btn-sm" href="del.php?id=<?=$row2['did'];?>&t=p"  title="Cancel"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>  Delete</a></center></td>
                                               </tr>
                                              <?php $total_rows++; }  ?> 

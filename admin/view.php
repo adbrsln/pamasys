@@ -7,7 +7,7 @@ if (!isset($_GET["id"])) {
   echo '<meta http-equiv="refresh" content="0;url=../admin/patient.php">';
 			
 }else  {
-   $query3="SELECT distinct d.content as content,d.medication as med, d.checkin as checkin,p.patientName as name ,p.patientPhoneNumber as notel, p.patientIc as ic,p.patientAddress as address FROM diagnosis d join patient p on d.patientID = p.patientID WHERE d.diagnosisID = '$transid'"; //index details
+   $query3="SELECT distinct d.diagnosisID as did,d.content as content,d.medication as med, d.checkin as checkin,p.patientName as name ,p.patientPhoneNumber as notel, p.patientIc as ic,p.patientAddress as address FROM diagnosis d join patient p on d.patientID = p.patientID WHERE d.diagnosisID = '$transid'"; //index details
 	$result3 =mysqli_query($connect,$query3);
 	$count = mysqli_num_rows($result3); }?>
   <!-- Header Content -->
@@ -71,7 +71,7 @@ if (!isset($_GET["id"])) {
                 <div class="pull-right">
                     
                      <button type ="submit" class ="btn btn-success" ><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Save</button>
-                    <a  class = "btn btn-primary" href="#" onclick="#" ><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</a>
+                    <a  target="_blank"  class = "btn btn-primary" href="print.php?id=<?php echo $transid;?>"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</a>
                     <a  class = "btn btn-danger" href="#" onclick="window.history.go(-1);" ><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancel</a>
                 </div>
                  </form>

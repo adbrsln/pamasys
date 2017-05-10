@@ -64,13 +64,13 @@ $p=mysqli_num_rows($result2);
                                                 
                                                 
                                                 <td ><center>
-                                                    <a  title="View Records" class = "btn btn-primary btn-sm"  href="listdiagnosis.php?id=<?=$row2['patientID'];?>" ><span class="glyphicon glyphicon-eye-open" ></span> View</a>&nbsp;
+                                                    <a  data-toggle="tooltip" data-placement="top" title="View" class = "btn btn-primary btn-sm"  href="listdiagnosis.php?id=<?=$row2['patientID'];?>" ><span class="glyphicon glyphicon-eye-open" ></span> View</a>&nbsp;
                                                     
-                                                    <a   title="Add in Queue" class = "btn btn-success btn-sm"  href="newq.php?id=<?=$row2['patientID'];?>" ><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add to Queue</a>&nbsp;
+                                                    <a   data-toggle="tooltip" data-placement="top" title="Add in Queue"class = "btn btn-success btn-sm"  href="newq.php?id=<?=$row2['patientID'];?>" ><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add to Queue</a>&nbsp;
                                                     
                                                   
                                                     
-                                                    <a id = "confirmation" class = "btn btn-danger btn-sm" href="del.php?id=<?=$row2['patientID'];?>&t=<?= 'pr'?>" ><span class="glyphicon glyphicon-remove" aria-hidden="true"> </span> Delete</a></center></td>
+                                                    <a data-toggle="tooltip" data-placement="top" title="Delete Record" id = "confirmation" class = "btn btn-danger btn-sm" href="del.php?id=<?=$row2['patientID'];?>&t=<?= 'pr'?>" ><span class="glyphicon glyphicon-remove" aria-hidden="true"> </span> Delete</a></center></td>
                                               </tr>
                                              <?php $total_rows++; }  ?> 
                                            
