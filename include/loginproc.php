@@ -43,7 +43,7 @@ $count = mysqli_num_rows($login) ;
 }
 else {
 
-header('Location:../main.php?s=lf');
+header('Location:../index.php?s=lf');
 
 }   
 
