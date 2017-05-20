@@ -1,4 +1,4 @@
-<?php 
+<?php
 include 'include/check.php';
 include '../include/db.php';
 
@@ -21,10 +21,10 @@ $p=mysqli_num_rows($result2);
                         <h1 class="page-header">
                             Patient <small>Management</small>
                         </h1>
-                        
+
                     </div>
                 </div>
-             
+
 
                <div class="row">
                     <div class="col-lg-12">
@@ -41,16 +41,16 @@ $p=mysqli_num_rows($result2);
                                 <h3 class="panel-title"><i class="fa fa-user fa-fw"></i> Patient List</h3>
                             </div>
                             <div class="panel-body">
-                                 <div class="dataTable_wrapper">                                    
+                                 <div class="dataTable_wrapper">
                                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                         <thead>
                                             <tr>
                                                 <th class="col-lg-1">No.</th>
                                                 <th>Patient Name</th>
                                                 <th>Patient IC</th>
-                                                
+
                                                 <th>Phone Number</th>
-                                                
+
                                                 <th>Action</th>
                                              </tr>
                                         </thead>
@@ -60,25 +60,25 @@ $p=mysqli_num_rows($result2);
                                                 <td><?=$total_rows;?></td>
                                                 <td><?php echo $row2['patientName']; ?></td>
                                                 <td><?php echo $row2['patientIc']; ?></td>
-                                               
+
                                                   <td><?php echo $row2['patientPhoneNumber']; ?></td>
-                                                
-                                                
+
+
                                                 <td ><center>
                                                     <a  data-toggle="tooltip" data-placement="top" title="View" class = "btn btn-primary btn-sm"  href="listdiagnosis.php?id=<?=$row2['patientID'];?>" ><span class="glyphicon glyphicon-eye-open" ></span> View</a>&nbsp;
-                                                    
+
                                                     <a   data-toggle="tooltip" data-placement="top" title="Add in Queue"class = "btn btn-success btn-sm"  href="newq.php?id=<?=$row2['patientID'];?>" ><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add to Queue</a>&nbsp;
-                                                    
-                                                  
-                                                    
+
+
+
                                                     <a data-toggle="tooltip" data-placement="top" title="Delete Record" id = "confirmation" class = "btn btn-danger btn-sm" href="del.php?id=<?=$row2['patientID'];?>&t=<?= 'pr'?>" ><span class="glyphicon glyphicon-remove" aria-hidden="true"> </span> Delete</a></center></td>
                                               </tr>
-                                             <?php $total_rows++; }  ?> 
-                                           
+                                             <?php $total_rows++; }  ?>
+
                                         </tbody>
                                     </table>
                                     <!--- bawah ni pagination-->
-                                 	
+
                                 </div>
 
                             </div>
@@ -95,22 +95,22 @@ $p=mysqli_num_rows($result2);
                       <h4 class="modal-title">New Patient</h4>
                     </div>
                     <div class="modal-body">
-                      
+
                           <form method="POST" action = "iproses.php">
-	                           <p>Patient Name</p>
-                               <input class="form-control"  type="text" name = "pname"  required>
+                            <p>Patient Name</p>
+                              <input class="form-control"  type="text" name = "pname" maxlength="30" required>
+                               </br>
+                               <p>Patient IC</p>
+                              <input class="form-control"  type="text" name = "pic" maxlength="12" placeholder="e.g : 941339085222"required>
                                 </br>
-                                <p>Patient IC</p>
-                               <input class="form-control"  type="text" name = "pic" maxlength = "15" required>
-                                 </br>
-                                <p>Patient Address</p>
-                                <input class="form-control"  type="text" name = "address"  required>
-                                 </br>
-                                <p>Patient Phone Number</p>
-                                <input class="form-control"  type="text" name = "notel"  maxlength = "11" required>
-                                 </br>
-                                
-                                
+                               <p>Patient Address</p>
+                               <input class="form-control"  type="text" name = "address"  required>
+                                </br>
+                               <p>Patient Phone Number</p>
+                               <input class="form-control"  type="text" name = "notel" maxlength="12" placeholder="e.g : 0176213816" required>
+                                </br>
+
+
                         </div>
                     <div class="modal-footer">
                       <input type="submit" class="btn btn-primary" value ="Submit" id="submit">
@@ -124,4 +124,3 @@ $p=mysqli_num_rows($result2);
     </div>
     <!-- /.footer -->
     <?php include "include/footer.php"; ?>
-

@@ -20,13 +20,13 @@
 
     <!-- footer CSS -->
     <link href="../css/stickyfooter.css" rel="stylesheet">
-    
+
     <link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
      <script src="../js/sweetalert.min.js"></script>
     <link rel="stylesheet" href="../css/sweetalert.css">
-    
-    
-    
+
+
+
     <link href="../include/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
     <link href="../include/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
 
@@ -49,20 +49,21 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav ">
-.                   
-                        
-                            
+.
+
+
                             <li><a href="patient.php">Patient Management</a></li>
-                            
+
                             <li><a href="staff.php">Staff Management</a></li>
+                            <li><a href="newu2.php">Update Profile</a></li>
                             <!--<li role="separator" class="divider"></li>
                             <li><a href="#">Separated link</a></li> -->
-                            
-                          
-                     
+
+
+
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    
+
                    <li>
                     <a href="../logout.php"><i class="fa fa-fw fa-power-off">&nbsp;</i>Logout</a>
                     </li>

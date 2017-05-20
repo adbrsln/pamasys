@@ -1,5 +1,5 @@
     <!-- Header Content -->
-   <?php 
+   <?php
 include 'include/check.php';
 include "include/header.php"; ?>
     <!-- end header Content -->
@@ -10,7 +10,7 @@ include "include/header.php"; ?>
                         <h1 class="page-header">
                             User Credentials <small>Management</small>
                         </h1>
-                        
+
                     </div>
                 </div>
 <div class="row">
@@ -29,28 +29,28 @@ include "include/header.php"; ?>
                      </br>
              <label>Username</label> </br>
                <input class="form-control"  type="text" name = "user"  required>
-                 
-              
+
+
                <input class="form-control"  type="hidden" name = "pass"  value = "user1234"></a>
                  </br>
-            <label>Credential type</label></br>  
+            <label>Credential type</label></br>
                 <select class ="form-control" name = "level">
                     <option value = "1">Admin</option>
                     <option value = "2">User</option>
                 </select>
             </br>
 
- </div> 
+ </div>
         <div class="col-lg-6">
-            
-                 
-                <label>Address</label></br>  
+
+
+                <label>Address</label></br>
                    <input class="form-control"  type="text" name = "add"  required></a>
                      </br>
-                <label>Phone Number</label></br>  
+                <label>Phone Number</label></br>
                    <input class="form-control"  type="text" name = "notel"  required></a>
                      </br>
-                <label>Title</label></br>  
+                <label>Title</label></br>
                     <select class ="form-control" name = "title">
                         <option value = "Mr.">Mr.</option>
                         <option value = "Miss">Ms.</option>
@@ -58,8 +58,8 @@ include "include/header.php"; ?>
                         <option value = "Dr.">Dr.</option>
                     </select>
                 </br>
-   
- 
+
+
     </div>
 
 </div>
