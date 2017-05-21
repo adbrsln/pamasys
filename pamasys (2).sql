@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2017 at 04:58 PM
+-- Generation Time: May 21, 2017 at 09:20 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -46,14 +46,18 @@ INSERT INTO `diagnosis` (`diagnosisID`, `patientID`, `staffID`, `content`, `medi
 (17, 26, 1, '', '', '2017-05-10 14:07:52', 3),
 (18, 27, 1, '', '', '2017-05-10 14:07:08', 3),
 (19, 26, 1, '', '', '2017-05-10 14:08:00', 3),
-(20, 26, 1, '', '', '2017-05-02 13:49:27', 1),
-(23, 29, 1, '', '', '2017-08-02 13:52:14', 1),
+(23, 29, 1, '', '', '2017-05-19 07:48:13', 3),
 (24, 27, 1, '', '', '2017-05-10 14:07:15', 3),
-(27, 28, 1, '', '', '2017-12-02 13:52:56', 1),
+(27, 28, 1, '', '', '2017-05-10 15:16:27', 3),
 (28, 27, 1, '', '', '2017-05-10 14:28:04', 3),
 (31, 29, 1, '', '', '2017-05-10 14:06:53', 3),
 (32, 30, 1, '', '', '2017-05-10 13:36:44', 3),
-(33, 27, 4, '', '', '2017-05-10 14:22:19', 3);
+(33, 27, 4, '', '', '2017-05-10 14:22:19', 3),
+(34, 28, 1, '<p>Batuk kering</p>\r\n', '<p>-Ubat Batuk</p>\r\n\r\n<p>- ubat panadol</p>\r\n', '2017-05-11 01:49:16', 2),
+(35, 27, 4, '', '', '2017-05-10 15:17:10', 3),
+(36, 26, 1, '<p>test</p>\r\n', '<p>test</p>\r\n', '2017-05-19 07:47:42', 3),
+(37, 27, 1, '<p>demam</p>\r\n', '<p>panadol</p>\r\n', '2017-05-11 01:54:01', 3),
+(38, 34, 1, '<p>ss</p>\r\n', '<p>ss</p>\r\n', '2017-05-19 07:59:30', 2);
 
 -- --------------------------------------------------------
 
@@ -74,11 +78,12 @@ CREATE TABLE `patient` (
 --
 
 INSERT INTO `patient` (`patientID`, `patientName`, `patientIc`, `patientAddress`, `patientPhoneNumber`) VALUES
-(26, 'Muhammad Azfar bin roslan', '94110202022', '31, jalan astaka 5/11 , 46000 Parit Raja', '0122332222'),
+(26, 'Muhammad Azfar bin roslan', '940908980985', '31, jalan astaka 5/11 , 46000 Parit Raja', '01554545875'),
 (27, 'Fatin Syarifah binti Kamal', '940552002221', '32, jalan markona 42/20 , 300499 Petaling Jaya , S', '01299922992'),
-(28, 'Muhammad Iskandar Bin jaafar', '941221321231233', 'no 41/12 hulu selangor', '01292929292'),
-(29, 'Muhammad Muinnudin bin Md Radzi', '912399393939929', 'No 50l, thailand', '01292923223'),
-(30, 'Muhammad Faiq bin Sudin', '123123123131123', 'No 11, Jalan Kasawari', '08726325656');
+(28, 'Muhammad Iskandar Bin jaafar', '941221321245', 'no 41/12 hulu selangor', '01292929292'),
+(29, 'Muhammad Muinnudin bin Md Radzi', '912399392665', 'No 50l, thailand', '01292923223'),
+(30, 'Muhammad Faiq bin Sudin', '980556322364', 'No 11, Jalan Kasawari', '08726325656'),
+(34, 'isz', '419494949494', 'uthm', '01461825285');
 
 -- --------------------------------------------------------
 
@@ -102,8 +107,9 @@ CREATE TABLE `staffdetail` (
 --
 
 INSERT INTO `staffdetail` (`staffid`, `staffName`, `staffAddress`, `staffNotel`, `staffTitle`, `username`, `password`, `level`) VALUES
-(1, 'admin', 'sadas', 'dasdadad', 'Mr.', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1),
-(4, 'muhammad adib bin ahmad roslan', '31, jalan kemboja 2 , seksyen BB4, Bukit Beruntung', '0176213816', 'Mr.', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 2);
+(1, 'Muhammad Farhan bin Abdullah', '31, jalan kemboja 2 , seksyen BB4, Bukit Beruntung', '0176213816', 'Dr.', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1),
+(4, 'muhammad adib bin ahmad roslans', '31, jalan kemboja 2 , seksyen BB4, Bukit Beruntung', '0176213816', 'Mr.', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 2),
+(5, 'Muhammad Faizal Bin Abdullah', '31, jalan kemboja 2 , seksyen BB4, Bukit Beruntung', '0176213816', 'Dr.', 'admin', 'b5b73fae0d87d8b4e2573105f8fbe7bc', 1);
 
 -- --------------------------------------------------------
 
@@ -164,17 +170,17 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `diagnosis`
 --
 ALTER TABLE `diagnosis`
-  MODIFY `diagnosisID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `diagnosisID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `patientID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `patientID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT for table `staffdetail`
 --
 ALTER TABLE `staffdetail`
-  MODIFY `staffid` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `staffid` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `status`
 --
