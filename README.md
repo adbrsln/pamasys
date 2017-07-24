@@ -61,6 +61,8 @@ Password : user
 5. Submit a pull request :D
 
 
-## License
+## Created By
 
-No License
+Adib Roslan
+
+Contact: http://fb.me/adbroslan
