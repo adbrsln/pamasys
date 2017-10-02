@@ -76,23 +76,23 @@
    
   
  <script>
-        $('#confirmation').click(function(e) {
-        e.preventDefault(); // Prevent the href from redirecting directly
-        var linkURL = $(this).attr("href");
-        warnBeforeRedirect(linkURL);
-        });
+    $('#confirmation').click(function(e) {
+    e.preventDefault(); // Prevent the href from redirecting directly
+    var linkURL = $(this).attr("href");
+    warnBeforeRedirect(linkURL);
+    });
 
-         function warnBeforeRedirect(linkURL) {
-            swal({
-              title: "Delete This Record?", 
-              text: "Caution! You cannot reverse this!", 
-              type: "warning",
-              showCancelButton: true
-            }, function() {
-              // Redirect the user
-              window.location.href = linkURL;
-            });
-          }
+    function warnBeforeRedirect(linkURL) {
+        swal({
+        title: "Delete This Record?", 
+        text: "Caution! You cannot reverse this!", 
+        type: "warning",
+        showCancelButton: true
+        }, function() {
+        // Redirect the user
+        window.location.href = linkURL;
+        });
+    }
     </script>
 <script type="text/javascript" src="../include/ckeditor/ckeditor.js"></script>
 </body>

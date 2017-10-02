@@ -19,7 +19,7 @@
     <link href="include/shop-homepage.css" rel="stylesheet">
 
     <!-- footer CSS -->
-    <link href="../css/stickyfooter.css" rel="stylesheet">
+    <!-- <link href="../css/stickyfooter.css" rel="stylesheet"> -->
 
     <link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
      <script src="../js/sweetalert.min.js"></script>
@@ -49,18 +49,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav ">
-.
-
-
-                            <li><a href="patient.php">Patient Management</a></li>
-
-                            <li><a href="staff.php">Staff Management</a></li>
-                            <li><a href="newu2.php">Update Profile</a></li>
-                            <!--<li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li> -->
-
-
-
+                    <li><a href="patient.php">Patient Management</a></li>
+                    <li><a href="staff.php">Staff Management</a></li>
+                    <li><a href="newu2.php">Update Profile</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
 
