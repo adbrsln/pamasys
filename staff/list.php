@@ -19,20 +19,14 @@ $p=mysqli_num_rows($result2);
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             Patient <small>Management</small>
+                            <a data-toggle="modal" data-target="#myModal"  class="btn btn-primary pull-right"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add New Patient</a> 
                         </h1>
 
                     </div>
                 </div>
 
 
-               <div class="row">
-                    <div class="col-lg-12">
-                        <div class="alert alert-info alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <i class="fa fa-info-circle"></i>  <strong>Adding a new Patient?</strong> Try out <a data-toggle="modal" data-target="#myModal" class="alert-link">Here</a>
-                        </div>
-                    </div>
-                </div>
+               
                <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-default">
@@ -65,12 +59,9 @@ $p=mysqli_num_rows($result2);
 
                                                 <td ><center>
                                                     <a  data-toggle="tooltip" data-placement="top" title="View" class = "btn btn-primary btn-sm"  href="listdiagnosis.php?id=<?=$row2['patientID'];?>" ><span class="glyphicon glyphicon-eye-open" ></span> View</a>&nbsp;
-
                                                     <a   data-toggle="tooltip" data-placement="top" title="Add in Queue"class = "btn btn-success btn-sm"  href="newq.php?id=<?=$row2['patientID'];?>" ><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add to Queue</a>&nbsp;
-
-
-
-                                                    <a data-toggle="tooltip" data-placement="top" title="Delete Record" id = "confirmation" class = "btn btn-danger btn-sm" href="del.php?id=<?=$row2['patientID'];?>&t=<?= 'pr'?>" ><span class="glyphicon glyphicon-remove" aria-hidden="true"> </span> Delete</a></center></td>
+                                                    <a id="confirmation" class = "btn btn-danger btn-sm"  href="del.php?id=<?=$row2['patientID'];?>&t=pr"  data-toggle="tooltip" data-placement="top" title="Delete Record"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete</a> </center>
+                                                </td>
                                               </tr>
                                              <?php $total_rows++; }  ?>
 

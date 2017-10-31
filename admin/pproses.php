@@ -28,7 +28,7 @@ else
 
 
 
-    echo '<meta http-equiv="refresh" content="0;url=../admin/patient.php?s=t">';
+    echo '<meta http-equiv="refresh" content="0;url=../admin/listdiagnosis.php?id='.$id.'&s=t">';
 
     }
 

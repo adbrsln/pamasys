@@ -20,20 +20,14 @@ $p=mysqli_num_rows($result2);
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             Patient <small>Management</small>
+                            <a data-toggle="modal" data-target="#myModal"  class="btn btn-primary pull-right"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add New Patient</a> 
                         </h1>
 
                     </div>
                 </div>
 
 
-               <div class="row">
-                    <div class="col-lg-12">
-                        <div class="alert alert-info alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <i class="fa fa-info-circle"></i>  <strong>Adding a new Patient?</strong> Try out <a data-toggle="modal" data-target="#myModal" class="alert-link">Here</a>
-                        </div>
-                    </div>
-                </div>
+               
                <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-default">

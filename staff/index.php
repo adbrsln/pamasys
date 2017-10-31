@@ -30,20 +30,14 @@ $p3=mysqli_num_rows($result3);
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             Patient <small>Queue</small>
+                            <a href = "list.php" class="btn btn-primary pull-right"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add New Patient</a> 
                         </h1>
                         
                     </div>
                 </div>
              
 
-               <div class="row">
-                    <div class="col-lg-12">
-                        <div class="alert alert-info alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <i class="fa fa-info-circle"></i>  <strong>Adding a new Inpatient?</strong> Try out <a href = "list.php" class="alert-link">Here</a>
-                        </div>
-                    </div>
-                </div>
+               
                <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-default">
@@ -81,8 +75,8 @@ $p3=mysqli_num_rows($result3);
                                                         }?></td>
                                                 
                                                 <td ><center><a  class = "btn btn-primary btn-sm"  href="view.php?id=<?=$row2['did'];?>" data-toggle="tooltip" data-placement="top" title="Attended"><span class="glyphicon glyphicon-eye-open" ></span> View</a>&nbsp;
-                                                  &nbsp;
-                                                    <a id="confirmation" class = "btn btn-danger btn-sm"  href="del.php?id=<?=$row2['did'];?>&t=p"  title="Cancel"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete</a> </center></td>
+                                                  
+                                                    <a id="confirmation" class = "btn btn-danger btn-sm"  href="del.php?id=<?=$row2['did'];?>&t=p"  data-toggle="tooltip" data-placement="top" title="Delete"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete</a> </center></td>
                                               </tr>
                                              <?php $total_rows++; }  ?> 
                                            

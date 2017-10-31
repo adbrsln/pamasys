@@ -29,20 +29,14 @@ $p3=mysqli_num_rows($result3);
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             Patient <small>Queue</small>
+                            <a href = "patient.php" class="btn btn-primary pull-right"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add New Patient</a> 
                         </h1>
-                        
+                         
                     </div>
                 </div>
              
 
-               <div class="row">
-                    <div class="col-lg-12">
-                        <div class="alert alert-info alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <i class="fa fa-info-circle"></i>  <strong>Adding a new Inpatient?</strong> Try out <a href = "patient.php" class="alert-link">Here</a>
-                        </div>
-                    </div>
-                </div>
+               
                <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-default">

@@ -12,11 +12,11 @@ if($type == 'p'){
     echo '<meta http-equiv="refresh" content="0;url=./index.php?s=t">'; 
     
 }elseif($type == 'rd'){
-
+   $id = $_GET['pid'];
     $query = "DELETE FROM diagnosis WHERE diagnosisID = '$num'";
 		mysqli_query($connect,$query) or die ("Error Query [".$strSQL."]");
 		$query = "FLUSH PRIVILEGES";
-    echo '<meta http-equiv="refresh" content="0;url=./index.php?s=t">'; 
+    echo '<meta http-equiv="refresh" content="0;url=./listdiagnosis.php?id='.$id.'&s=t">'; 
 }
 elseif($type == 'pr'){
 
@@ -25,8 +25,6 @@ elseif($type == 'pr'){
 		$query = "FLUSH PRIVILEGES";
    
     echo '<meta http-equiv="refresh" content="0;url=./list.php?s=t">'; 
-}
-
-//include 'files/closedb.php';	
+}	
 
 ?>

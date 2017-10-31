@@ -19,7 +19,7 @@
     <link href="include/shop-homepage.css" rel="stylesheet">
 
     <!-- footer CSS -->
-    <link href="../css/stickyfooter.css" rel="stylesheet">
+    <!-- <link href="../css/stickyfooter.css" rel="stylesheet"> -->
     
     <link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
      <script src="../js/sweetalert.min.js"></script>
