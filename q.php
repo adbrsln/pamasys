@@ -1,13 +1,14 @@
 <?php 
 include 'include/db.php';
 
-$sql2 = "SELECT DISTINCT d.patientID as pid,d.diagnosisID as did,d.checkin as timecheckin,
+$sql2 = "SELECT d.patientID as pid,d.diagnosisID as did,d.checkin as timecheckin,
 d.statusID as status ,patient.patientID,patient.patientName as name ,patient.patientIc as ic, 
-status.statusName as sname ,status.statusID as statid
-FROM diagnosis d 
+status.statusName as sname ,status.statusID as statid, r.name as roomname
+FROM diagnosis d
+join room r on d.roomID = r.id
 join patient on d.patientID = patient.patientID
 join status on d.statusID = status.statusID
-WHERE status.statusName != 'Complete' ORDER BY did DESC";
+WHERE status.statusName = 'Waiting Diagnosis' OR status.statusName = 'Collect Medication' ORDER BY did DESC";
 $result2 = mysqli_query($connect,$sql2);
 ?>
 <!DOCTYPE html>
@@ -16,7 +17,7 @@ $result2 = mysqli_query($connect,$sql2);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="refresh" content="5;URL='<?=$_SERVER['PHP_SELF']?>'">
+    <!-- <meta http-equiv="refresh" content="5;URL='<?=$_SERVER['PHP_SELF']?>'"> -->
     <title>Patient Management System</title>
 
     <!-- Bootstrap Core CSS -->
@@ -56,7 +57,7 @@ $result2 = mysqli_query($connect,$sql2);
         <tr>
         <td><?=$total_rows;?></td>
         <td><?php echo $row2['name']; ?></td>
-        <td class="text-center">Medical Room 1</td>
+        <td class="text-center"><?php echo $row2['roomname']; ?></td>
         <td class="text-center"><?php  echo $row2['timecheckin']; ?></td>
                                                 
         </tr>

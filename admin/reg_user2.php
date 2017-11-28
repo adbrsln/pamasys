@@ -19,7 +19,7 @@ if ($p != ''){
     $query = "UPDATE staffdetail set username = '$u' , password = '$encrypted_mypassword'  where staffid = $num";
     mysqli_query($connect,$query) or die ("Error Query [".$strSQL."]");
     $query = "FLUSH PRIVILEGES";
-    echo '<meta http-equiv="refresh" content="0;url=./newu.php?s=pt">';
+    echo '<meta http-equiv="refresh" content="0;url=./newu2.php?s=pt">';
 
 }else{
 
@@ -27,7 +27,7 @@ if ($p != ''){
     $query = "UPDATE staffdetail set username = '$u',staffName = '$n', staffAddress = '$add', staffNotel ='$not',staffTitle = '$t'  where staffid = $num";
     mysqli_query($connect,$query) or die ("Error Query [".$strSQL."]");
     $query = "FLUSH PRIVILEGES";
-    echo '<meta http-equiv="refresh" content="0;url=./newu.php?s=pt">';
+    echo '<meta http-equiv="refresh" content="0;url=./newu2.php?s=pt">';
 
 }
 

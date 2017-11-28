@@ -33,7 +33,15 @@ elseif($type == 'pr'){
     
     
     echo '<meta http-equiv="refresh" content="0;url=./patient.php?s=t">'; 
-}
+}elseif($type == 'room'){
+  
+      $query = "DELETE FROM room WHERE id = '$num'";
+      mysqli_query($connect,$query) or die ("Error Query [".$strSQL."]");
+      $query = "FLUSH PRIVILEGES";
+      
+      
+      echo '<meta http-equiv="refresh" content="0;url=./room.php?s=t">'; 
+  }
 
 //include 'files/closedb.php';	
 

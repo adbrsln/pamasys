@@ -14,22 +14,15 @@ $p=mysqli_num_rows($result2);
     <div class="container">
        <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Staff <small>Management</small>
-                        </h1>
                         
+                        <h1 class="page-header">
+                        Staff <small>Management</small>
+                            <a data-toggle="modal" data-target="#myModal"  class="btn btn-primary pull-right"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add New Staff</a> 
+                        
+                        </h1>
                     </div>
                 </div>
              
-
-               <div class="row">
-                    <div class="col-lg-12">
-                        <div class="alert alert-info alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <i class="fa fa-info-circle"></i>  <strong>Adding a new user?</strong> Try out <a href="newu.php" class="alert-link">Here</a>
-                        </div>
-                    </div>
-                </div>
                <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-default">
@@ -56,9 +49,9 @@ $p=mysqli_num_rows($result2);
                                                 
                                                 <td ><?php if($row2['level'] == 1) {echo '<span class="label label-success">Admin</span>';}else echo '<span class="label label-primary">Staff</span>'; ?></td>
                                                 <td ><center>
-                                                    <a  class = "btn btn-primary btn-sm"  href="edit.php?id=<?=$row2['staffid'];?>" >Update</a>&nbsp;
+                                                    <a  class = "btn btn-primary btn-sm"  href="edit.php?id=<?=$row2['staffid'];?>" ><span class="glyphicon glyphicon-edit" aria-hidden="true"> </span> Update</a>&nbsp;
                                                    
-                                                    <a   id = "confirmation" class = "btn btn-danger btn-sm" href="del.php?id=<?=$row2['staffid'];?>&t=r" >Delete</a></center></td>
+                                                    <a   id = "confirmation" class = "btn btn-danger btn-sm" href="del.php?id=<?=$row2['staffid'];?>&t=r" ><span class="glyphicon glyphicon-remove" aria-hidden="true"> </span> Delete</a></center></td>
                                               </tr>
                                              <?php  }  ?> 
                                            
@@ -72,6 +65,68 @@ $p=mysqli_num_rows($result2);
                         </div>
                     </div>
                 </div>
+    </div>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+            <div class="modal-header ">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add New Staff</h4>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action = "reg_user.php">
+                <div class="row">
+                <div class="col-lg-6">
+                                <label>Name</label> </br>
+                               <input class="form-control"  type="text" name = "name"  required>
+                                 </br>
+                         <label>Username</label> </br>
+                           <input class="form-control"  type="text" name = "user"  required>
+            
+            
+                           <input class="form-control"  type="hidden" name = "pass"  value = "user1234"></a>
+                             </br>
+                        <label>Credential type</label></br>
+                            <select class ="form-control" name = "level">
+                                <option value = "1">Admin</option>
+                                <option value = "2">User</option>
+                            </select>
+                        </br>
+            
+             </div>
+                    <div class="col-lg-6">
+            
+            
+                            <label>Address</label></br>
+                               <input class="form-control"  type="text" name = "add"  required></a>
+                                 </br>
+                            <label>Phone Number</label></br>
+                               <input class="form-control"  type="text" name = "notel"  required></a>
+                                 </br>
+                            <label>Title</label></br>
+                                <select class ="form-control" name = "title">
+                                    <option value = "Mr.">Mr.</option>
+                                    <option value = "Miss">Ms.</option>
+                                    <option value = "Madam">Madam</option>
+                                    <option value = "Dr.">Dr.</option>
+                                </select>
+                            </br>
+            
+            
+                </div>
+            </div>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-primary" value ="Submit" id="submit">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </form>
+            </div>
+            </div>
+
+        </div>
+        </div>
     </div>
     <!-- /.footer -->
     <?php include "include/footer.php"; ?>

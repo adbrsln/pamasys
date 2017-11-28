@@ -5,7 +5,11 @@ $transid = $_GET["id"];
 if (isset($_GET["id"])) {
 
 
-$sql2 = "SELECT DISTINCT d.diagnosisID as diagid, d.statusID as status,d.content,d.medication,d.checkin, s.staffName as drname, s.staffTitle as title,status.statusName as sname FROM diagnosis d join staffdetail s on d.staffID = s.staffid join status on d.statusID = status.statusID where d.patientID = '$transid'";
+    $sql2 = "SELECT DISTINCT d.diagnosisID as diagid, d.statusID as status,
+d.content,d.medication,d.checkin, s.staffName as drname, s.staffTitle as title,
+status.statusName as sname FROM diagnosis d 
+join room r on d.roomID = r.id
+join staffdetail s on d.attendBy = s.staffid join status on d.statusID = status.statusID where d.patientID = '$transid'";
 
 $result2 = mysqli_query($connect,$sql2);
 $p=mysqli_num_rows($result2);

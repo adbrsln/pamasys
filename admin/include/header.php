@@ -51,6 +51,7 @@
                 <ul class="nav navbar-nav ">
                     <li><a href="patient.php">Patient Management</a></li>
                     <li><a href="staff.php">Staff Management</a></li>
+                    <li><a href="room.php">Room Management</a></li>
                     <li><a href="newu2.php">Update Profile</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">

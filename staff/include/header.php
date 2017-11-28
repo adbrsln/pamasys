@@ -14,6 +14,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/jquery.js"></script>
 
     <!-- Custom CSS -->
     <link href="include/shop-homepage.css" rel="stylesheet">

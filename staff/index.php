@@ -72,6 +72,8 @@ $p3=mysqli_num_rows($result3);
                                                         case 2 : echo '<span class="label label-warning">'; echo $row2['sname']; echo '</span>'; break;
                                                         case 3 : echo '<span class="label label-success">'; echo $row2['sname']; echo '</span>'; break;
                                                         case 4 : echo '<span class="label label-danger">'; echo $row2['sname']; echo '</span>'; break;
+                                                        case 5 : echo '<span class="label label-info">'; echo $row2['sname']; echo '</span>'; break;
+                                                        
                                                         }?></td>
                                                 
                                                 <td ><center><a  class = "btn btn-primary btn-sm"  href="view.php?id=<?=$row2['did'];?>" data-toggle="tooltip" data-placement="top" title="Attended"><span class="glyphicon glyphicon-eye-open" ></span> View</a>&nbsp;

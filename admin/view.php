@@ -19,7 +19,7 @@ if (!isset($_GET["id"])) {
         <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Patient Transaction <small>Details</small>
+                            Patient Appointment <small>Details</small>
                             <div class="pull-right"><small>Patient ID: P<?php echo $transid;?></small></div>
                         </h1>
                         
@@ -38,8 +38,8 @@ if (!isset($_GET["id"])) {
                             <td class = "col-md-6" colspan="2">
                             <Strong>Patient Information</Strong></br></br>
                                 Check in Time :   <Strong><?php echo $row2['checkin']; ?></Strong></br>
-                                Name : <?php echo $row2['name']; ?></br>
-                                Identification Number : <?php echo $row2['ic']; ?></br>
+                                Name : <?php echo $row2['name']; $name = $row2['name']; ?></br>
+                                Identification Number : <?php echo $row2['ic']; $ic = $row2['ic']; ?></br>
                                 Phone Number : <?php echo $row2['notel']; ?></br>
                                 Address : <?php echo $row2['address']; ?></br>
                                </br>
@@ -70,15 +70,61 @@ if (!isset($_GET["id"])) {
                 <hr>
                 <div class="pull-right">
                     
-                     <button type ="submit" class ="btn btn-success" ><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Save</button>
+                    <button type ="submit" class ="btn btn-success" ><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Save</button>
+                    <a  class = "btn btn-info" href="#" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Issue Medical Certificate</a>
                     <a  target="_blank"  class = "btn btn-primary" href="print.php?id=<?php echo $transid;?>"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</a>
-                    <a  class = "btn btn-danger" href="#" onclick="window.history.go(-1);" ><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancel</a>
+                    <a  class = "btn btn-danger" href="#" onclick="window.history.go(-1);" ><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Return to previous page</a>
                 </div>
                  </form>
                 </div>
         </div>
        
 </div>
+
+<div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header ">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Issue Medical Certificate</h4>
+                    </div>
+                    <div class="modal-body">
+
+                          <form method="POST" action = "medproses.php" target="_blank">
+                            <p>Patient Name</p>
+                              <input class="form-control"  type="text" name = "pname" maxlength="30" value = "<?=$name?>" required>
+                               </br>
+                               <p>Patient IC</p>
+                              <input class="form-control"  type="text" name = "pic" maxlength="12" placeholder="e.g : 941339085222" value = "<?=$ic?>" required>
+                                </br>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <p>Start Date</p>
+                                        <input class="form-control"  type="date" name = "sdate" placeholder="Medical Certificate Start Date" required>
+                                       
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <p>End Date</p>
+                                        <input class="form-control"  type="date" name = "edate" placeholder="Medical Certificate End Date" required>
+                                        
+                                    </div>
+                                    
+                                </div>
+
+
+                        </div>
+                    <div class="modal-footer">
+                      <input type="submit" class="btn btn-primary" value ="Submit" id="submit">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </form>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+    </div>
     <!-- /.footer -->
     <?php include "include/footer.php"; ?>
 

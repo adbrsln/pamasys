@@ -73,8 +73,7 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
-
+   
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
 
@@ -117,6 +116,26 @@ $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   
 });
 </script>
+
+<script>
+       $('#confirmation').click(function(e) {
+        e.preventDefault(); // Prevent the href from redirecting directly
+        var linkURL = $(this).attr("href");
+        warnBeforeRedirect(linkURL);
+        });
+    
+        function warnBeforeRedirect(linkURL) {
+            swal({
+            title: "Are you sure?", 
+            text: "Caution! You cannot reverse this!", 
+            type: "warning",confirmButtonColor: "#DD6B55",
+            showCancelButton: true
+            }, function() {
+            // Redirect the user
+            window.location.href = linkURL;
+            });
+        }
+    </script>
 </body>
 
 </html>

@@ -13,12 +13,20 @@ $num=mysqli_num_rows($result);
 if ($num > 0) {
 	
     if ($type == 'Approve'){
-		$query2 = "UPDATE diagnosis set statusID = 3 where diagnosisID = '$id'";
+		$query2 = "UPDATE diagnosis set statusID = 5 where diagnosisID = '$id'";
 
 		mysqli_query($connect,$query2) or die('Error: ' . mysqli_error());
 		$querydaftar = "FLUSH PRIVILEGES";
 
 		 echo '<meta http-equiv="refresh" content="0;url=../staff/list.php">';
+
+	}else if ($type == 'collectMed'){
+		$query2 = "UPDATE diagnosis set statusID = 2,roomID = 7 where diagnosisID = '$id'";
+
+		mysqli_query($connect,$query2) or die('Error: ' . mysqli_error());
+		$querydaftar = "FLUSH PRIVILEGES";
+
+		 echo '<meta http-equiv="refresh" content="0;url=../staff/view.php?id='.$id.'&s=t">';
 
 	}else {
 		$query2 = "UPDATE diagnosis set statusID = 4 where diagnosisID = '$id'";
