@@ -4,8 +4,8 @@ include '../include/db.php';
 
 $rid = $_POST['rid'];
 $pid = $_POST['pid'];
-// $sid = $_SESSION['sid'];
-$query = "INSERT INTO diagnosis (patientID,roomID, statusID) VALUES ('$pid','$rid', 1)";
+ $sid = $_POST['sid'];
+$query = "INSERT INTO diagnosis (patientID,roomID,statusID,attendBy) VALUES ('$pid','$rid', 1,'$sid')";
 mysqli_query($connect,$query) or die ("Error Query [".$strSQL."]");
 $query = "FLUSH PRIVILEGES";
 

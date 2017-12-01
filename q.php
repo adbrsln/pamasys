@@ -19,7 +19,6 @@ $result2 = mysqli_query($connect,$sql2);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- <meta http-equiv="refresh" content="5;URL='<?=$_SERVER['PHP_SELF']?>'"> -->
     <title>Patient Management System</title>
-
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 

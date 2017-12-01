@@ -24,22 +24,19 @@ $count = mysqli_num_rows($login) ;
 				}
 
  if ($count != "") {
-           switch ($type) {
-				case 1:
-				 	 
-					header('Location: ../admin'); // admin Level;
-					break;
-				case 2:
-				 			
+	switch ($type) {
+		case 1:
 				
-					header('Location: ../staff/index.php');
-					break;
-				
-			   
-			}
-			
-			
+			header('Location: ../admin'); // admin Level;
+			break;
+		case 2:
+					
 		
+			header('Location: ../staff/index.php');
+			break;
+		
+		
+	}
 }
 else {
 

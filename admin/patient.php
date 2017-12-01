@@ -1,5 +1,4 @@
-<?php
-include 'include/check.php';
+<?php include 'include/check.php';
 include '../include/db.php';
 
 $sql2 = "SELECT * FROM patient";
@@ -127,13 +126,17 @@ $p=mysqli_num_rows($result1);
                 </div>
                 <div class="modal-body">
                     <form method="POST" action = "newq.php">
+                    
+                    
                     <input type="hidden" name="pid" id="roomId" value=""/>
                     <p>Medical Room</p>
                     <select name="rid" class="form-control">
                     <?php while($row1= mysqli_fetch_assoc($result1)){ ?>
                         <option value="<?=$row1['id']?>"><?=$row1['name']?></option>
-                    <?php } ?>
+                        
+                    <?php $sid = $row1['idStaff'];} ?>
                     </select>
+                    <input type="hidden" name="sid" value="<?=$sid?>"/>
                     </br>
                 </div>
                 <div class="modal-footer">
@@ -147,10 +150,11 @@ $p=mysqli_num_rows($result1);
             </div>
     </div>
     <!-- /.footer -->
+   
+    <?php include "include/footer.php"; ?>
     <script>
    $(document).on("click", ".open-myModal2", function () {
     var roomid = $(this).data('id');
     $(".modal-body #roomId").val( roomid );
     });
     </script>
-    <?php include "include/footer.php"; ?>
